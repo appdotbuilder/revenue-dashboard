@@ -41,16 +41,16 @@ export function RevenueChart({ data, isLoading }: RevenueChartProps) {
   return (
     <div className="space-y-4">
       {/* Simple bar chart placeholder */}
-      <div className="h-[300px] flex items-end justify-between gap-1 p-4 bg-muted/30 rounded-lg">
+      <div className="h-[300px] flex items-end justify-between gap-1 p-4 bg-muted/30 rounded-lg border border-border">
         {data.map((point: RevenueDataPoint) => {
           const heightPercent = maxRevenue > 0 ? (point.revenue / maxRevenue) * 100 : 0;
           return (
             <div key={point.period} className="flex-1 flex flex-col items-center">
-              <div className="text-xs mb-1 font-medium">
+              <div className="text-xs mb-1 font-medium text-foreground">
                 ${point.revenue.toLocaleString()}
               </div>
               <div
-                className="w-full bg-blue-500 rounded-t min-h-[4px] transition-all duration-300 hover:bg-blue-600"
+                className="w-full bg-chart-1 rounded-t min-h-[4px] transition-all duration-300 hover:bg-chart-2"
                 style={{ height: `${heightPercent}%` }}
                 title={`${point.period}: $${point.revenue.toLocaleString()}`}
               />
@@ -75,8 +75,8 @@ export function RevenueChart({ data, isLoading }: RevenueChartProps) {
       </div>
 
       {/* Note about stub implementation */}
-      <Card className="border-amber-200 bg-amber-50 p-3">
-        <div className="text-sm text-amber-800">
+      <Card className="border-muted bg-muted/50 p-3">
+        <div className="text-sm text-muted-foreground">
           <strong>📊 Chart Placeholder:</strong> This is a simple bar chart visualization. 
           In production, this would be replaced with a full-featured charting library 
           like Recharts or Chart.js for interactive, responsive charts.

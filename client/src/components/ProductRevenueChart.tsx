@@ -45,8 +45,8 @@ export function ProductRevenueChart({ data, isLoading }: ProductRevenueChartProp
 
   const productNames = Object.keys(productGroups);
   const colors = [
-    'bg-blue-500', 'bg-green-500', 'bg-purple-500', 'bg-orange-500', 
-    'bg-red-500', 'bg-teal-500', 'bg-pink-500', 'bg-indigo-500'
+    'bg-chart-1', 'bg-chart-2', 'bg-chart-3', 'bg-chart-4', 
+    'bg-chart-5', 'bg-blue-500', 'bg-green-500', 'bg-purple-500'
   ];
 
   // Calculate totals for each product
@@ -80,7 +80,7 @@ export function ProductRevenueChart({ data, isLoading }: ProductRevenueChartProp
                   style={{ width: `${widthPercent}%` }}
                 >
                   {widthPercent > 20 && (
-                    <span className="text-white text-xs font-medium">
+                    <span className="text-primary-foreground text-xs font-medium">
                       {product.dataPoints.length} periods
                     </span>
                   )}
@@ -137,8 +137,8 @@ export function ProductRevenueChart({ data, isLoading }: ProductRevenueChartProp
       )}
 
       {/* Note about stub implementation */}
-      <Card className="border-amber-200 bg-amber-50 p-3">
-        <div className="text-sm text-amber-800">
+      <Card className="border-muted bg-muted/50 p-3">
+        <div className="text-sm text-muted-foreground">
           <strong>🧩 Product Chart Placeholder:</strong> This shows product revenue comparison 
           and time-based breakdown. In production, this would use advanced charting with 
           stacked bars, multi-line charts, or interactive legends for better data exploration.
